@@ -1,0 +1,14 @@
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Zip files (ne pas uploader le zip généré pour le store)
+*.zip
+
+# VS Code directory
+.vscode/
