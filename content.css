@@ -1,0 +1,76 @@
+/* --- Visualisation Erreurs (Rouge) --- */
+.rgaa-error-highlight {
+    outline: 2px solid #ef4444 !important;
+    outline-offset: 2px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* --- Visualisation Conseils (Jaune/Orange) --- */
+.rgaa-suggestion-highlight {
+    outline: 2px solid #F6AD55 !important; /* Orange */
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* --- Simulation de Fix (Vert) --- */
+.rgaa-fix-preview {
+    background-color: #38A169;
+    color: white;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10000;
+}
+
+/* --- Tooltips style Apple --- */
+.rgaa-tooltip {
+    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(5px);
+    z-index: 2147483647;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Effet Glass */
+    color: #1A202C;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px; font-family: system-ui, -apple-system, sans-serif;
+    white-space: nowrap;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1);
+    opacity: 0; pointer-events: none; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.rgaa-tooltip strong { display: block; font-size: 10px; letter-spacing: 0.5px; margin-bottom: 2px; }
+
+.rgaa-error-highlight:hover .rgaa-tooltip,
+.rgaa-suggestion-highlight:hover .rgaa-tooltip {
+    opacity: 1; transform: translateX(-50%) translateY(0);
+}
+
+/* Animation Pulse */
+@keyframes rgaa-pop { 0% { transform: scale(0.95); opacity: 0.5; } 100% { transform: scale(1); opacity: 0; } }
+.rgaa-focus-active { position: relative; }
+.rgaa-focus-active::after {
+    content: ''; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+    border: 2px solid #3182CE; border-radius: 8px;
+    animation: rgaa-pop 1.5s infinite;
+}
+/* Ajout pour content.css */
+.rgaa-fix-preview {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 6px;
+    color: white;
+    margin-left: 5px;
+    vertical-align: middle;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+}

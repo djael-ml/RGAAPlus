@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGAAPlus</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="glass-header">
+            <div class="brand">
+                <div class="brand-logo">R+</div>
+                <span class="brand-name">RGAAPlus</span>
+            </div>
+            <div class="status-indicator ready" id="statusIndicator"></div>
+        </header>
+
+        <section class="score-section">
+            <div class="circular-score">
+                <span id="scoreValue">--</span>
+            </div>
+            <p class="score-subtitle">Score de conformité</p>
+        </section>
+
+        <section class="stats-row">
+            <div class="stat-capsule error">
+                <span class="stat-num" id="errorCount">0</span>
+                <span class="stat-label">Erreurs</span>
+            </div>
+            <div class="stat-capsule suggestion">
+                <span class="stat-num" id="suggestionCount">0</span>
+                <span class="stat-label">Conseils</span>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <div class="scroll-area" id="resultsList">
+            <div class="empty-state">
+                <div class="start-icon">✨</div>
+                <p>Prêt pour l'audit ?</p>
+            </div>
+        </div>
+
+        <footer>
+            <button id="scanBtn" class="action-btn">
+                <span class="btn-txt">Lancer l'audit</span>
+                <div class="spinner"></div>
+            </button>
+            <div class="github-plug">
+                by <a href="https://github.com/djael-ml" target="_blank">djael-ml</a>
+            </div>
+        </footer>
+    </div>
+
+    <template id="themeItemTemplate">
+        <div class="theme-card">
+            <div class="theme-head">
+                <div class="theme-info">
+                    <span class="theme-tag"></span>
+                    <span class="theme-text"></span>
+                </div>
+                <div class="theme-toggle">▼</div>
+            </div>
+            <div class="theme-body"></div>
+        </div>
+    </template>
+    
+    <script type="module" src="popup.js"></script>
+</body>
+</html>
